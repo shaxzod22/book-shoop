@@ -1,0 +1,60 @@
+@import './common/Mixin.scss';
+@import './common/Variables.scss';
+@import './common/fonts.scss';
+
+
+.navbar{
+    &__genre__heading{
+        font-family: 'Karla',sans-serif;
+
+    }
+
+    &__genre__list{
+        border-bottom: 1px solid $border-color;
+    }
+    &__genre__item{
+        font-family: 'Karla',sans-serif;
+    }
+    &__genre__item.active{
+        background-color: $light;
+        border-left: 3px solid $active-item;
+        color: $active-item;
+    }
+}
+
+.books{
+    &__top__part{
+        box-shadow: 0 0 60px 15px #0000001a;
+    }
+
+    &__lower__part{
+        box-shadow: 0 0 60px 15px #0000001a;
+    }
+}
+
+.recommended{
+    &__item__inner__overview{
+        font-family: 'Rambla',sans-serif;
+    }
+}
+.newstory{
+    &__item__inner__overview{
+        font-family: 'Rambla',sans-serif;
+    }
+}
+
+.blog{
+    &__inner__title{
+        font-family: 'Rambla',sans-serif;
+    }
+}
+
+.dinamic{
+    &__date__info{
+        font-family: 'Rambla',sans-serif;
+    }
+}
+
+.rambla{
+    font-family: 'Rambla',sans-serif;
+}

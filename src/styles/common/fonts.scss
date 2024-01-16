@@ -1,0 +1,67 @@
+/* rubik-300 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 300;
+    src: url('./../assets/fonts/RubikLight-Light.woff') format('woff'),
+     url('./../assets/fonts/RubikLight-Light.woff2') format('woff2'); 
+  }
+  /* rubik-regular - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./../assets/fonts/RubikLight-Regular.woff') format('woff'),
+    url('./../assets/fonts/RubikLight-Regular.woff2') format('woff2');
+  }
+  /* rubik-500 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./../assets/fonts/RubikLight-Medium.woff') format('woff'),
+    url('./../assets/fonts/RubikLight-Medium.woff2') format('woff2'); 
+  }
+  /* rubik-700 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./../assets/fonts/RubikLight-Bold.woff') format('woff'),
+    url('./../assets/fonts/RubikLight-Bold.woff2') format('woff2');
+  }
+
+
+  /* rambla-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Rambla';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./../assets/fonts/Rambla-Regular.woff') format('woff'),
+    url('./../assets/fonts/Rambla-Regular.woff2') format('woff2');
+  }
+
+
+  /* karla-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./../assets/fonts/Karla-Regular.woff') format('woff'),
+    url('./../assets/fonts/Karla-Regular.woff2') format('woff2');
+  }
+  /* karla-700 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./../assets/fonts/Karla-Bold.woff') format('woff'),
+    url('./../assets/fonts/Karla-Bold.woff2') format('woff2');
+  }

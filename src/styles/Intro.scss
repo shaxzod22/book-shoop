@@ -1,0 +1,55 @@
+@import './common/Mixin.scss';
+@import './common/Variables.scss';
+@import './common/fonts.scss';
+
+.intro{
+       background-position: right -3px top;
+    background-size: 673px 613px;
+    &__container{
+        color: $dark;
+    }
+    
+    &__heading{
+        font-family: 'Rubik',sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 75px;
+        line-height: 95px;
+        max-width: 700px;
+        margin-bottom: 15px;
+    }
+    
+    &__title{
+        font-family: 'Rambla',sans-serif;
+        text-transform: capitalize;
+        font-size: 25px;
+        line-height: 30px;
+        margin-bottom: 25px;
+    }
+    
+    &__form{
+        @include df($align:center);
+        padding: 0 15px;
+        max-width: 406px;
+        background-color: $btn-color;
+    }
+    
+    &__search__icon{
+        width: 24px;
+        height: 24px;
+    }
+    
+    &__search__input{
+        padding: 18px 3px;
+        width: 100%;
+        border: none;
+        background-color: $btn-color;
+        outline: none;
+        font-size: 16px;
+        line-height: 18px;
+        
+        &::placeholder{
+            color: #0000004d;
+        }
+    }
+}

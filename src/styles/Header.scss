@@ -1,0 +1,73 @@
+@import './common/Mixin.scss';
+@import './common/Variables.scss';
+@import './common/fonts.scss';
+
+.header{
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    &__container{
+        @include df($align:center,$justify:space-between);
+        max-width: 1330px;
+        padding: 33px 0;
+    }
+    
+    &__logo__box{
+        @include df($align:center,$gap:20px);
+    }
+    
+    &__logo__img{
+        width: 125px;
+        height: 36px;
+    }
+    
+    &__logo__border{
+        height: 34px;
+        width: 0.8px;
+        background-color: $border-color;
+    }
+    &__shopping__icon{
+        width: 24px;
+        height: 24px;
+    }
+    
+    &__navbar{
+        @include df($align:center,$gap:45px);
+    }
+    
+    &__navbar__list{
+        @include df($align:center,$gap:45px);
+    }
+    &__navbar__item{
+        @include df(column,center,center,12px);
+        padding: 20px 0 4px 0;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19px;
+        color: $light;
+    }
+    
+    &__navbar__btn{
+        font-family: 'Rubik',sans-serif;
+        width: 189px;
+        height: 58px;
+        border-radius: 30px;
+        background-color: $btn-color;
+        font-size: 25px;
+        line-height: 29px;
+        color: $dark;
+        font-weight: 500;
+        cursor: pointer;
+        border: none;
+    }
+    
+}
+
+.header__navbar__item.active .header__navbar__item__active{
+    
+    width: 30px;
+    height: 3px;
+    background-color:$light;
+    
+}
