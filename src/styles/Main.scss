@@ -3,6 +3,7 @@
 @import './common/fonts.scss';
 
 
+
 .navbar{
     &__genre__heading{
         font-family: 'Karla',sans-serif;
@@ -57,4 +58,8 @@
 
 .rambla{
     font-family: 'Rambla',sans-serif;
+}
+
+.none{
+    display: none;
 }
