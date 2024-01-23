@@ -4,6 +4,7 @@ import IntroSection from "../components/IntroSection"
 import Main from "../components/Main"
 
 const ShopPage = () => {
+
   return (
     <>
       <Header/>

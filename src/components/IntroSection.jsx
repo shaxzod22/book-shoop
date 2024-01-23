@@ -7,7 +7,7 @@ import './../styles/Intro.scss'
 import { useContext } from 'react';
 import { TypeContext } from '../App';
 
-const IntroSection = ({heading,title,position,img,size}) => {
+const IntroSection = ({heading,title,position,img,size,page}) => {
     console.log(position);
     const {setType}= useContext(TypeContext)
     const handleSubmit = (e)=>{
@@ -18,16 +18,16 @@ const IntroSection = ({heading,title,position,img,size}) => {
     }
     
     return (
-        <section className={`intro bg-no-repeat bg-[length:673px_613px]`} style={{backgroundImage:`url(${IntroBg})`}}>
-        <div className={`intro__container container pb-[123px] pt-[169px] bg-no-repeat  ${size?size:'bg-[length:297px_497px]'}  ${position?position:'bg-right-bottom'}`} style={{backgroundImage:`url(${img== 'book'?BookBg:IntroGirlBg})`}}>
-        <h2 className="intro__heading">{heading}</h2>
+        <section className={`intro bg-no-repeat bg-[length:453px_453px] xl:bg-[length:673px_613px]`} style={{backgroundImage:`url(${IntroBg})`}}>
+        <div className={`intro__container px-4 max-w-[780px] xl:max-w-[1000px] 3xl:max-w-[1330px] mx-auto pb-[80px] lg:pb-[100px] xl:pb-[123px] pt-[70px] sm:pt-[100px] lg:pt-[120px] xl:pt-[169px] bg-no-repeat  ${size?size:'bg-[length:0px_0px] md:bg-[length:217px_387px] xl:bg-[length:257px_457px] 3xl:bg-[length:297px_497px]'}  ${position?position:'bg-right-bottom'}`} style={{backgroundImage:`url(${img== 'book'?BookBg:IntroGirlBg})`}}>
+        <h2 className="intro__heading  md:max-w-[400px] leading-[30px] sm:text-start text-center text-[#dedede] sm:text-black sm:leading-[45px] lg:leading-[55px] xl:leading-[70px] xl:text-[45px] text-[20px] sm:text-[25px] max-w-[300px] md:text-[30px] lg:text-[36px] lg:max-w-[500px] xl:max-w-[600px] 2xl:text-[50px] 3xl:leading-[95px] 3xl:text-[75px] 2xl:max-w-[700px] 3xl:mb-[15px] font-bold uppercase mb-2 sm:mb-0">{heading}</h2>
         
-        <p className="intro__title max-w-[555px] leading-10">{title}</p>
-        <form onSubmit={handleSubmit} className="intro__form">
-        <FiSearch className="intro__search__icon" />
-        <input name='a' className="intro__search__input" placeholder="Search Book" type="text" />
+        <p className="intro__title text-[#dedede] sm:text-black md:text-[22px] text-[18px] xl:text-[25px] leading-[20px] text-center sm:text-start sm:leading-[30px] max-w-[300px] md:max-w-[400px] lg:max-w-[555px] ">{title}</p>
+        {page != 'blog'?<form  onSubmit={handleSubmit} className="intro__form max-w-[280px] md:max-w-[320px] xl:max-w-[406px]">
+        <FiSearch className="md:w-6 h-5 w-5 md:h-6 " />
+        <input name='a' className="intro__search__input px-[3px] py-[14px] md:py-[18px] " placeholder="Search Book" type="text" />
         <button >Go</button>
-        </form>
+        </form>:''}
         </div>
         </section>
         )
@@ -39,6 +39,7 @@ const IntroSection = ({heading,title,position,img,size}) => {
         position:PropTypes.string,
         img:PropTypes.string,
         size:PropTypes.string,
+        page:PropTypes.string,
     }
     
     export default IntroSection

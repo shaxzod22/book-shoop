@@ -7,7 +7,7 @@ const BlogPage = () => {
   return (
     <>
       <Header/>
-      <IntroSection heading="blog mybook" position='bg-right' img="book" size="bg-[length:538px_358px]" title="lightweight article where discussing matters relating to the book" />
+      <IntroSection page='blog' heading="blog mybook" position='bg-right' img="book" size="bg-[length:538px_358px]" title="lightweight article where discussing matters relating to the book" />
       <Main page="blog" />
       <Footer/>
     </>

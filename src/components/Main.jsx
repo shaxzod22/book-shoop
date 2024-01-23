@@ -12,7 +12,7 @@ const Main = ({page}) => {
   const {type} = useContext(TypeContext)
   console.log(type);
   return (
-    <main className="flex gap-[59px] bg-[#F5F6F8] pt-[90px] pb-[79px] w-full">
+    <main className="flex relative bg-[#F5F6F8] pt-14 2xl:pt-[90px] pb-[50px] sm:pb-[79px] w-screen">
       {page !='blog'?<Navbar/>:<BlogsList/>}
       {type=='all'&& page=='shop'?<BuyBook/>:type=='all'&& page=='home'?<BooksSection/>:type !='all'? <TypeBookSection page={page} />:''}
     </main>

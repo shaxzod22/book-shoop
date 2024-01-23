@@ -31,16 +31,16 @@ export const GetNewBook = createAsyncThunk('NewBook', async()=>{
 })
 export const GetLikeBook = createAsyncThunk('LikeBook', async()=>{
     try {
-        const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=popular&orderBy=newest&key=AIzaSyDzaPV0_3tk3Ji7i2IwzyJdzRLNV3Xhxus`)
+        const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=like&orderBy=newest&key=AIzaSyDzaPV0_3tk3Ji7i2IwzyJdzRLNV3Xhxus`)
         const jsonedData = await response.json()
         return jsonedData
     } catch (error) {
         console.log(error);
     }
 })
-export const GetSearchBook = createAsyncThunk('searchBook', async()=>{
+export const GetSearchBook = createAsyncThunk('searchBook', async(query)=>{
     try {
-        const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=popular&orderBy=newest&key=AIzaSyDzaPV0_3tk3Ji7i2IwzyJdzRLNV3Xhxus`)
+        const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&orderBy=newest&key=AIzaSyDzaPV0_3tk3Ji7i2IwzyJdzRLNV3Xhxus`)
         const jsonedData = await response.json()
         return jsonedData
     } catch (error) {
@@ -51,6 +51,7 @@ export const GetSearchBook = createAsyncThunk('searchBook', async()=>{
 export const GetDinamicBook = createAsyncThunk('dinamicBook', async(id)=>{
     try {
         const response = await fetch(`https://www.googleapis.com/books/v1/volumes/${id}?key=AIzaSyDzaPV0_3tk3Ji7i2IwzyJdzRLNV3Xhxus`)
+        console.log('fetched');
         const jsonedData = await response.json()
         return jsonedData
     } catch (error) {

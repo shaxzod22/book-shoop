@@ -2,14 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.swiper {
-  margin-left: 0;
-  max-width: 947px;
-  width: 100%;
-  
-}
-
 .swiper-slide {
   font-size: 18px;
   background-color: transparent;    /* Center slide text vertically */
