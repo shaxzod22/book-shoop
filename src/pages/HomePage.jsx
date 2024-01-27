@@ -1,11 +1,12 @@
-
+import { useContext } from 'react'
+import { TypeContext } from '../App'
 import Footer from "../components/Footer"
 import Header from "../components/Header"
 import IntroSection from "../components/IntroSection"
 import Main from "../components/Main"
 
 const HomePage = () => {
- 
+
   return (
     <>
      <Header/> 

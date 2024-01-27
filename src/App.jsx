@@ -7,9 +7,10 @@ export const TypeContext = createContext()
 
 function App() {
   const [type,setType] = useState('all')
+  const [isLoading,setIsLoading] = useState(false)
 
   return (
-    <TypeContext.Provider value={{type,setType}}>
+    <TypeContext.Provider value={{type,isLoading,setIsLoading,setType}}>
       <MainRoutes/>
     </TypeContext.Provider>
   )

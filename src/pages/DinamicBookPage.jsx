@@ -21,8 +21,14 @@ useEffect(()=>{
   dispatch(GetSearchBook(bookArr?.volumeInfo?.categories?.length>1? bookArr?.volumeInfo?.categories[0]:bookArr?.volumeInfo?.categories))
   },[dispatch,bookArr?.volumeInfo?.categories])
   const relatedData = useSelector(state=>state.book)
+
   let relatedBookArr = relatedData?.searchData?.items
-  console.log(relatedBookArr);
+  console.log(relatedData);
+
+  if(relatedData?.dinamicLoading){
+  return <div className="loading__wrapper"><div className="loader"></div></div>
+  }
+
   return (
    
       <section className="bg-[#F5F6F8] mx-auto bg-no-repeat bg-top bg-[length:100%] pt-4 md:pt-[20px] lg:pt-[40px]  2xl:pt-[50px] 3xl:pt-[30px] px-4 max-w-full  pb-[86px]" style={{backgroundImage:`url(${DinamicPageBg})`,}}>
@@ -72,7 +78,7 @@ useEffect(()=>{
     <div className="px-4 md:px-[38px] pb-[33px] flex items-start flex-col">
     <h2 className="text-[25px] leading-[23px] tracking-[0.003px] md:mb-[15px] sm:mb-3 lg:mb-[25px]">Description</h2>
 
-    <p className="text-[14px] md:text-4 text-[#00000099] leading-[20px] md:leading-[26px] tracking-[0.004px] mb-5 md:mb-[30px] lg:mb-[54px]">{bookArr?.volumeInfo?.description?.replaceAll('<p>','').replaceAll('</p>','') } </p>
+    <p className="text-[14px] md:text-4 text-[#00000099] leading-[20px] md:leading-[26px] tracking-[0.004px] mb-5 md:mb-[30px] lg:mb-[54px]">{bookArr?.volumeInfo?.description?.replaceAll('<p>','').replaceAll('</p>','').replaceAll('<b>','').replaceAll('</b>','').replaceAll('<br>','').replaceAll('</br>','').replaceAll('<i>','').replaceAll('</i>','') } </p>
     
     <div className="flex flex-wrap items-center gap-4 md:gap-[25px] mb-8 md:mb-[54px]">
     <button className="w-[100px] md:w-[108px] h-[30px] md:h-[39px] bg-[#DEDEDE] rounded-[10px] text-[#0000004d] hover:bg-[#b9b8b8] active:opacity-70">Biografi</button>
@@ -140,7 +146,7 @@ useEffect(()=>{
     
     <div className="flex flex-col w-full gap-6">
   {relatedBookArr && relatedBookArr.slice(0,4).map((book,index)=>(
-      <Link to={`/book/${book.id}`} key={index} className="bg-white flex-col md:flex-row pt-[13px] pl-[17px] pr-[15px] pb-[17px] w-full flex lg:items-start items-center gap-[23px]">
+      <Link onClick={()=>window.scrollTo(0,0)} to={`/book/${book.id}`} key={index} className="bg-white flex-col md:flex-row pt-[13px] pl-[17px] pr-[15px] pb-[17px] w-full flex lg:items-start items-center gap-[23px]">
       <img src={book?.volumeInfo?.imageLinks?.thumbnail} alt="book" className="drop-shadow-xl w-[147px] h-[225px]" />
       
       <div >

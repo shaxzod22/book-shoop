@@ -10,7 +10,6 @@ import { TypeContext } from '../App'
 
 const Main = ({page}) => {
   const {type} = useContext(TypeContext)
-  console.log(type);
   return (
     <main className="flex relative bg-[#F5F6F8] pt-14 2xl:pt-[90px] pb-[50px] sm:pb-[79px] w-screen">
       {page !='blog'?<Navbar/>:<BlogsList/>}

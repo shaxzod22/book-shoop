@@ -13,7 +13,10 @@ const NewStory = () => {
     },[dispatch])
     const data = useSelector(state=>state.book)
     const bookArr = data.storyData.items
-    console.log(bookArr);
+    if(data?.storyLoading){
+      return <div className="loading__wrapper"><div className="loader"></div></div>
+      }
+
   return (
     <section className="newstory mb-[120px]">
         <div className="newstory__container">
@@ -21,7 +24,7 @@ const NewStory = () => {
         <div className="flex justify-center gap-y-12 3xl:gap-y-20 3xl:gap-x-[103px] 2xl:gap-x-[50px] flex-wrap">
         {
           bookArr&&  bookArr.length && bookArr.slice(0,4).map((book,index)=>(
-                <Link to={`/book/${book.id}`} key={index} className="recommended__item 3xl:w-[420px]  w-[600px] 3xl:items-start md:items-start shadow-2xl md:shadow-none p-3 md:p-0 rounded-lg md:rounded-none md:flex-row flex-col items-center flex gap-6">
+                <Link onClick={()=>window.scrollTo(0,0)} to={`/book/${book.id}`} key={index} className="recommended__item 3xl:w-[420px]  w-[600px] 3xl:items-start md:items-start shadow-2xl md:shadow-none p-3 md:p-0 rounded-lg md:rounded-none md:flex-row flex-col items-center flex gap-6">
                 <img src={book?.volumeInfo.imageLinks?.thumbnail
                 } alt="book" className="drop-shadow-2xl w-[130px] sm:w-[147px] h-[190px] rounded-lg sm:rounded-none sm:h-[225px] recommended__book__img" />
                 

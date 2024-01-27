@@ -13,6 +13,9 @@ const RecommendedBooks = () => {
     
     const data = useSelector(state=>state.book)
     const bookArr = data.recommendData?.items
+    if(data?.loading){
+        return <div className="loading__wrapper"><div className="loader"></div></div>
+        }
     return (
         
         <section className="recommended mb-[120px]">
@@ -21,7 +24,7 @@ const RecommendedBooks = () => {
         <div className="recommended__list justify-center flex 2xl:gap-y-12 gap-y-6 3xl:gap-y-20 3xl:gap-x-[103px] gap-x-[50px] flex-wrap">
         {
           bookArr&&  bookArr.length && bookArr.slice(0,4).map((book,index)=>(
-                <Link to={`/book/${book.id}`} key={index} className="recommended__item max-w-[600px] xl:max-w-[420px] 2xl:max-w-[600px] 3xl:items-start 2xl:items-center 3xl:w-[420px] items-center md:items-start shadow-2xl md:shadow-none p-3 md:p-0 rounded-lg md:rounded-none md:flex-row flex-col flex gap-6">
+                <Link onClick={()=>window.scrollTo(0,0)} to={`/book/${book.id}`} key={index} className="recommended__item max-w-[600px] xl:max-w-[420px] 2xl:max-w-[600px] 3xl:items-start 2xl:items-center 3xl:w-[420px] items-center md:items-start shadow-2xl md:shadow-none p-3 md:p-0 rounded-lg md:rounded-none md:flex-row flex-col flex gap-6">
                 <img src={book?.volumeInfo.imageLinks?.thumbnail
                 } alt="book" className="drop-shadow-2xl w-[130px] sm:w-[147px] h-[190px] rounded-lg sm:rounded-none sm:h-[225px] recommended__book__img" />
                 

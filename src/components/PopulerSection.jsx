@@ -17,7 +17,10 @@ const PopulerSection = () => {
   },[dispatch])
   const data = useSelector(state=>state.book)
   const bookArr = data.populerData.items
-  console.log(bookArr);
+  if(data?.populerLoading){
+    return <div className="loading__wrapper"><div className="loader"></div></div>
+    }
+
   return (
     <section className="populer w-full">
     <div className="populer__container w-full">
@@ -26,7 +29,7 @@ const PopulerSection = () => {
     <Swiper
     slidesPerView={1.5}
     slidesPerGroup= {1.5}
-    loop={true}
+    slidesPerGroupSkip={20}
     keyboard={true}
     breakpoints={{
       1330: {
@@ -56,7 +59,7 @@ const PopulerSection = () => {
     {
       bookArr&&  bookArr.length && bookArr.slice(0,9).map((book,index)=>(
         <SwiperSlide key={index}>
-        <Link to={`/book/${book.id}`}>
+        <Link onClick={()=>window.scrollTo(0,0)} to={`/book/${book.id}`}>
         <div className="populer__book__link w-[160px]
         xl:w-[188px] decoration-none text-5 leading-6  ">
         <img src={book?.volumeInfo.imageLinks?.thumbnail

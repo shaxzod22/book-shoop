@@ -8,7 +8,7 @@ import { useContext } from 'react';
 import { TypeContext } from '../App';
 
 const IntroSection = ({heading,title,position,img,size,page}) => {
-    console.log(position);
+   
     const {setType}= useContext(TypeContext)
     const handleSubmit = (e)=>{
         e.preventDefault()
@@ -23,9 +23,9 @@ const IntroSection = ({heading,title,position,img,size,page}) => {
         <h2 className="intro__heading  md:max-w-[400px] leading-[30px] md:text-start text-center text-[#dedede] sm:text-black md:leading-[45px] lg:leading-[55px] xl:leading-[70px] xl:text-[45px] text-[20px] sm:text-[25px] max-w-[300px] md:text-[30px] lg:text-[36px] lg:max-w-[500px] xl:max-w-[600px] 2xl:text-[50px] 3xl:leading-[95px] 3xl:text-[75px] 2xl:max-w-[700px] 3xl:mb-[15px] font-bold uppercase mb-2 md:mb-0">{heading}</h2>
         
         <p className="intro__title text-[#dedede] sm:text-black md:text-[22px] text-[18px] xl:text-[25px] leading-[20px] md:text-start text-center sm:leading-[30px] max-w-[300px] md:max-w-[400px] lg:max-w-[555px] ">{title}</p>
-        {page != 'blog'?<form  onSubmit={handleSubmit} className="intro__form max-w-[280px] md:max-w-[320px] xl:max-w-[406px]">
+        {page != 'blog'?<form  onSubmit={handleSubmit} className="intro__form w-full max-w-[280px] md:max-w-[320px] xl:max-w-[406px]">
         <FiSearch className="md:w-6 h-5 w-5 md:h-6 " />
-        <input name='a' className="intro__search__input px-[3px] py-[14px] md:py-[18px] " placeholder="Search Book" type="text" />
+        <input name='a' className="intro__search__input w-full px-[3px] py-[14px] md:py-[18px] " placeholder="Search Book" type="text" />
         <button >Go</button>
         </form>:''}
         </div>
