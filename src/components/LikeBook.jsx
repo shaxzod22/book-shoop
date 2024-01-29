@@ -56,7 +56,7 @@ const LikeBook = () => {
     className="mySwiper box-border w-full"
     >
     {
-      bookArr&&  bookArr.length && bookArr.slice(0,9).map((book,index)=>(
+      bookArr&&  bookArr.length && bookArr.filter((checkBook=>checkBook?.volumeInfo?.pageCount)).slice(0,9).map((book,index)=>(
         <SwiperSlide key={index}>
         <Link onClick={()=>window.scrollTo(0,0)} to={`/book/${book.id}`}>
         <div className="populer__book__link decoration-none text-5 leading-6 w-[160px]

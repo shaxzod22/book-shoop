@@ -23,7 +23,7 @@ const NewStory = () => {
         <h2 className="newstory__heading text-center font-medium sm:text-[40px] text-[28px] tracking-[0.02px] mb-[15px] sm:mb-[60px] leading-[47px]">This new story</h2>
         <div className="flex justify-center gap-y-12 3xl:gap-y-20 3xl:gap-x-[103px] 2xl:gap-x-[50px] flex-wrap">
         {
-          bookArr&&  bookArr.length && bookArr.slice(0,4).map((book,index)=>(
+          bookArr&&  bookArr.length && bookArr.filter((checkBook=>checkBook?.volumeInfo?.pageCount)).slice(0,4).map((book,index)=>(
                 <Link onClick={()=>window.scrollTo(0,0)} to={`/book/${book.id}`} key={index} className="recommended__item 3xl:w-[420px]  w-[600px] 3xl:items-start md:items-start shadow-2xl md:shadow-none p-3 md:p-0 rounded-lg md:rounded-none md:flex-row flex-col items-center flex gap-6">
                 <img src={book?.volumeInfo.imageLinks?.thumbnail
                 } alt="book" className="drop-shadow-2xl w-[130px] sm:w-[147px] h-[190px] rounded-lg sm:rounded-none sm:h-[225px] recommended__book__img" />

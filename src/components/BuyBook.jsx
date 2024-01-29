@@ -21,7 +21,7 @@ const BuyBook = () => {
   return (
     <section className="2xl:pl-[330px] px-6 lg:px-4 3xl:pl-[360px]">
     <div className="flex pt-[120px] lg:pt-0 justify-center flex-wrap lg:ml-[78px] gap-y-[140px] lg:gap-y-[69px] gap-x-[100px] 2xl:gap-x-[147px]">
-      {bookArr && bookArr.slice(0,8).map((book,index)=>(
+      {bookArr && bookArr.filter((checkBook=>checkBook?.volumeInfo?.pageCount)).slice(0,8).map((book,index)=>(
            <Link onClick={()=>window.scrollTo(0,0)} to={`/book/${book.id}`} key={index} className="3xl:w-[384px] rounded-lg 2xl:rounded-none max-w-[600px] xl:w-[384px] 2xl:w-[600px] relative bg-white px-7 lg:pt-[29px] pr-[33px] lg:pl-[104px] pt-[140px] pb-[27px]">
            <img src={book?.volumeInfo.imageLinks?.thumbnail
                 } alt="book" className="absolute drop-shadow-2xl w-[147px] lg:left-0 left-1/2 top-0 h-[225px] translate-x-[-50%] translate-y-[-50%] lg:translate-y-[32px]" />
