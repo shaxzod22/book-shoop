@@ -1,5 +1,5 @@
-import { useContext } from 'react'
-import { TypeContext } from '../App'
+
+import { useSelector } from "react-redux"
 import Footer from "../components/Footer"
 import Header from "../components/Header"
 import IntroSection from "../components/IntroSection"

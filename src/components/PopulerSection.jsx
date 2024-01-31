@@ -17,7 +17,7 @@ const PopulerSection = () => {
   },[dispatch])
   const data = useSelector(state=>state.book)
   const bookArr = data.populerData.items
-  if(data?.populerLoading){
+  if(data?.loading){
     return <div className="loading__wrapper"><div className="loader"></div></div>
     }
 

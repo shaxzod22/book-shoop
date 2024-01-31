@@ -68,7 +68,7 @@ const BookSlice = createSlice({
         error:false,
         recommendData:[],
         dinamicBook:[],
-        populerLoading:false,
+        loading:false,
         populerError:false,
         populerData:[],
         storyLoading:false,
@@ -107,15 +107,15 @@ const BookSlice = createSlice({
             state.dinamicBook=[]
         })
         .addCase(GetPopulerBook.pending,(state)=>{
-            state.populerLoading= true
+            state.loading= true
         })
         .addCase(GetPopulerBook.fulfilled,(state,action)=>{
             state.populerData= action.payload
-            state.populerLoading =false
+            state.loading =false
         })
         .addCase(GetPopulerBook.rejected,(state)=>{
             state.populerError=true
-            state.populerLoading=false
+            state.loading=false
             state.populerData=[]
         })
         .addCase(GetNewBook.pending,(state)=>{

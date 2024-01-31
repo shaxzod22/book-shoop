@@ -13,7 +13,7 @@ const Main = ({page}) => {
   return (
     <main className="flex relative bg-[#F5F6F8] pt-14 2xl:pt-[90px] pb-[50px] sm:pb-[79px] w-screen">
       {page !='blog'?<Navbar/>:<BlogsList/>}
-      {type=='all'&& page=='shop'?<BuyBook/>:type=='all'&& page=='home'?<BooksSection/>:type !='all'? <TypeBookSection page={page} />:''}
+      {type=='all'&& page=='shop'?<BuyBook/>:type=='all'&& page=='home'?<BooksSection/>:type !='all' && page != 'blog'? <TypeBookSection page={page} />:''}
     </main>
   )
 }
